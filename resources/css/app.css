@@ -1,0 +1,89 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.header{
+	background-image:url("https://cdn.pixabay.com/photo/2016/11/27/08/22/logo-1862307_960_720.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100%;
+	height:600px;
+	background-position:bottom;
+}
+.div-video{
+	height:400px;
+}
+.brand-bg{
+	box-shadow: #ddd 0px 0px 19px 8px;
+	margin-bottom: 29px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+h3{
+	font-size:50px;
+}
+.trending-box{
+	height:200px;
+	width:200px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border: 2px solid blue;
+	border-radius: 50%;
+}
+
+.num-select{
+	text-align:center;
+	background:none;
+	border:none;
+	border-bottom:2px solid rgba(167, 243, 208, var(--tw-bg-opacity));
+	width:80%;
+	font-size:50px;
+}
+.btn-add{
+	display:block;
+	width:100%;
+	padding:8px 12px;
+}
+input.number-select{
+	background:none;
+	text-align:center;
+	font-size: 50px;
+	font-weight:bold;
+	width:100%;
+	border-bottom:dashed ;
+}
+input.number-select::focus{
+	border:none;
+}
+.pay-methods{
+	border-right:2px solid #ccc;
+}
+.btn-add{
+	color:#fff;
+	display:block;
+}
+.buy-div{
+	border-right:2px solid #ccc;
+}
+.bg-img{
+	background-image: url("https://cdn.pixabay.com/photo/2019/06/23/14/48/handshake-4293865_960_720.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100%;
+	padding-top:25px;
+	padding-bottom:25px;
+	background-attachment:fixed;
+}
+.wave{
+}
+@media only screen and (max-width: 600px) {
+	.buy-div{
+		border-right:none;
+		border-bottom:2px solid #ccc;
+	}
+}
