@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\RaffleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
-    return view('index');
-})->name('index');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
+//     return view('index');
+// })->name('index');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/dash', function () {
-    return view('dash.index');
-});
+// Route::get('/dash', function () {
+//     return view('dash.index');
+// });

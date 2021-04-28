@@ -8,15 +8,20 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+
+use App\Models\Purchase;
+use App\Models\Role;
 
 class User extends Authenticatable
 {
-    use HasApiTokens;
+    // use HasApiTokens;
     use HasFactory;
-    use HasProfilePhoto;
+    // use HasProfilePhoto;
+    // use HasTeams;
     use Notifiable;
-    use TwoFactorAuthenticatable;
+    // use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -24,9 +29,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -58,4 +61,19 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    
+    //Relación 1:N - Acceder a Compras del Usuario:
+    public function purchases(){                
+        return $this->hasMany(Purchase::class); //hasMany - Puede realizar/tener muchas compras.
+    }
+
+    //Relación 1:N - Acceder al Rol de un User:
+    public function role(){                
+        return $this->belongsTo(Role::class); //belongsTo - Puede tener un solo Rol.
+    }
+        
+
+
+
 }
