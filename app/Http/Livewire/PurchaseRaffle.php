@@ -9,6 +9,9 @@ use App\Models\Raffle;
 
 class PurchaseRaffle extends Component
 {
+    public $jackpot_raffle;
+    public $raffles_price;
+    
     public $quantity = 1;
     public $final_price;
     public $message = null;
@@ -87,8 +90,11 @@ class PurchaseRaffle extends Component
 
         $jackpot_value = $draw->jackpot_value;
 
+        $this->jackpot_raffle = $jackpot_value;
+
         //Calculo precio de las rifas (1% del jackpot/pozo acumulado) 
         $raffles_price = $jackpot_value*0.01;
+        $this->raffles_price = $raffles_price;
         
         //Calculo precio por el total de las rifas solicitadas 
 
@@ -99,7 +105,7 @@ class PurchaseRaffle extends Component
             $this->final_price = null;
         }
 
-        return view('livewire.raffle-calculator', ['final_price',  "message", "available_raffles"]);
+        return view('livewire.purchase-raffle', ['raffles_price', 'jackpot_raffle', 'final_price',  "message", "available_raffles"]);
 
     }
 }
